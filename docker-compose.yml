@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: usuarios_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - goproject_pgdata:/var/lib/postgresql/data  # volumen único
+
+volumes:
+  goproject_pgdata:
